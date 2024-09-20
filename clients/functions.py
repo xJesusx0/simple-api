@@ -30,11 +30,15 @@ def print_color(color:str,text:str):
     
 
 def print_messages(messages:list,username:str):
-
-
     for message in messages.json():
         if username == message["nombre"]:
-            print(f'{print_color('green',message["nombre"])}: {message["mensaje"]}')
+            print(f'{print_color("green",message["nombre"])}: {message["mensaje"]}')
             continue
 
-        print(f'{print_color('blue',message["nombre"])}: {message["mensaje"]}')
+        print(f'{print_color("blue",message["nombre"])}: {message["mensaje"]}')
+
+def print_message(message,username):
+    if username == message["nombre"]:
+        print(f'{print_color("green",message["nombre"])}: {message["mensaje"]}')
+        return
+    print(f'{print_color("blue",message["nombre"])}: {message["mensaje"]}')
